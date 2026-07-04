@@ -22,6 +22,25 @@ async function existsFileCheckout(){
     const data=await fs.existsSync('rename2.txt')
     console.log(data)
 }
+//file append
+async function appendFile(){
+   try {
+     const data=await fs.appendFileSync('rename2.txt','text2 added')
+    console.log('file apend success!')
+   } catch (error) {
+    console.log(error)
+   }
+}
+//delete files
+async function deleteFile(){
+    try {
+    const data=await fs.unlinkSync('adnan.text')
+    console.log('file is deleted') 
+    } catch (error) {
+    console.log('failed to delete files')
+    }
+}
+
 (async()=>{
-    await existsFileCheckout()
+    await deleteFile()
 })()
